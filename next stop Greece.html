@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NextStop Greece – Study in Greece in English</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="NextStop Greece helps you find and apply to English-taught university programs in Greece while preparing your Greek language skills."
+  />
+  <style>
+    :root {
+      --primary: #0b7285;
+      --primary-dark: #08505d;
+      --accent: #ffb703;
+      --bg: #f7f9fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 249, 251, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .logo span:first-child {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: transform 0.1s ease, box-shadow 0.1s ease,
+        background-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(11, 114, 133, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(11, 114, 133, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: rgba(11, 114, 133, 0.06);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.12;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 34rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #e0f2f5;
+      color: #075160;
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #ffffff, #e0f4ff);
+      border-radius: 1.5rem;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e0f2fe;
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-card li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      color: var(--primary);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      margin-top: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-badge span:first-child {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 34rem;
+      margin: 0 auto;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.45rem;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .pill.alt {
+      background: #ecfeff;
+      color: #0f766e;
+    }
+
+    .split-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.94rem;
+    }
+
+    .split-list h3 {
+      margin-bottom: 0.35rem;
+    }
+
+    .split-list ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.86rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: #fef3c7;
+      border-radius: 0.65rem;
+      padding: 0.4rem 0.6rem;
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .mini-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #0b7285, #0f4f66);
+      border-radius: 1.5rem;
+      padding: 2rem 1.75rem;
+      color: var(--white);
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.3);
+    }
+
+    .contact-box h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+      color: #e5f6ff;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 1rem;
+    }
+
+    footer {
+      padding: 1.75rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1.25rem;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .split-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <span>NextStop</span><span>Greece</span>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#why-greece">Why Greece</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li>
+              <a href="#contact" class="btn btn-outline">Free consultation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Study in Greece in English</div>
+          <h1>From “I’m interested” to “I’m enrolled” in Greece.</h1>
+          <p class="hero-sub">
+            NextStop Greece is a joint service by <strong>The Glossonauts</strong>
+            &amp; <strong>L.TWO</strong>. We help you find the right English-taught
+            program in Greece, secure your admission, and prepare your Greek so
+            you can thrive in class and everyday life.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">
+              Book your free 20-minute consultation
+            </a>
+            <span class="hero-note">No commitment – just a clear plan.</span>
+          </div>
+
+          <div class="hero-pill">
+            <span>✓</span>
+            <span>Language + admissions under one roof</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Overview">
+          <h2>Your pathway to a European degree</h2>
+          <ul>
+            <li>English-taught Bachelors &amp; Masters at Greek universities</li>
+            <li>One-on-one guidance for programs, deadlines, and documents</li>
+            <li>Greek lessons tailored to your academic and daily needs</li>
+            <li>Support from your first question to your first day on campus</li>
+          </ul>
+          <div class="hero-badge">
+            <span></span>
+            <span>Now accepting students for upcoming intakes</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GREECE -->
+  <section id="why-greece">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why choose Greece for your studies?</h2>
+        <p>
+          Mediterranean lifestyle, safe cities, a rich cultural heritage – and
+          English-taught programs that lead to respected European degrees.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>European degree, Mediterranean life</h3>
+          <p>
+            Study in vibrant cities like Athens, Thessaloniki, Patras, Crete,
+            and Ioannina while enjoying sun, sea, food, and culture. Greece
+            offers a student-friendly environment with living costs that are
+            typically lower than in many Northern or Western European cities.
+          </p>
+          <p class="tagline">
+            Weekdays in class, weekends exploring islands, mountains, and
+            ancient sites.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Safe, welcoming, and well-connected</h3>
+          <p>
+            Greek cities are known for their safety, hospitality, and strong
+            sense of community. With easy access to the rest of Europe, you can
+            combine your studies with travel, internships, and international
+            opportunities.
+          </p>
+          <div class="pill-row" aria-label="Highlights">
+            <span class="pill">Safe cities</span>
+            <span class="pill">EU member state</span>
+            <span class="pill">Lower living costs</span>
+            <span class="pill">Rich culture &amp; history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs">
+    <div class="container">
+      <div class="section-title">
+        <h2>What can you study in Greece (in English)?</h2>
+        <p>
+          From Bachelor’s to Master’s degrees, Greece offers an expanding range
+          of English-taught programs in both public and private universities.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <span class="mini-title">Undergraduate programs</span>
+          <h3>English-taught Bachelor’s degrees</h3>
+          <p>
+            A growing number of public and private institutions in Greece now
+            offer full Bachelor’s degrees in English. Typical fields include:
+          </p>
+          <ul class="pill-row">
+            <li class="pill alt">Business &amp; Economics</li>
+            <li class="pill alt">Computer Science &amp; Engineering</li>
+            <li class="pill alt">Medicine &amp; Health Sciences</li>
+            <li class="pill alt">Tourism &amp; Hospitality</li>
+            <li class="pill alt">Social Sciences</li>
+            <li class="pill alt">Arts &amp; Humanities</li>
+          </ul>
+          <p class="tagline">
+            We help you compare options so you can choose what truly fits your
+            goals.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="mini-title">Postgraduate programs</span>
+          <h3>English-taught Master’s &amp; beyond</h3>
+          <p>
+            Greece hosts a wide variety of Master’s programs in English,
+            including:
+          </p>
+          <ul class="pill-row">
+            <li class="pill">STEM &amp; Data</li>
+            <li class="pill">Business &amp; Management</li>
+            <li class="pill">Maritime Studies</li>
+            <li class="pill">Cultural &amp; Classical Studies</li>
+            <li class="pill">Health &amp; Sport Sciences</li>
+          </ul>
+          <p class="tagline">
+            Small cohorts, project-based learning, and close connections to
+            industry and research.
+          </p>
+        </div>
+      </div>
+
+      <section style="margin-top: 2.5rem;">
+        <div class="split-list">
+          <div>
+            <h3>Public universities</h3>
+            <ul>
+              <li>Recognised across the EU with strong academic reputation</li>
+              <li>Growing number of Bachelor’s and Master’s in English</li>
+              <li>Highly competitive, especially for certain fields</li>
+              <li>Excellent value, particularly for EU citizens</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Private universities &amp; colleges</h3>
+            <ul>
+              <li>Broad offerings of English-taught UG &amp; PG programs</li>
+              <li>Modern, industry-linked curricula &amp; facilities</li>
+              <li>Smaller classes and strong focus on student support</li>
+              <li>
+                International partnerships, internships, and career services
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- WHY NEXTSTOP -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why work with NextStop Greece?</h2>
+        <p>
+          Two expert teams, one coordinated service: language preparation +
+          admissions strategy, from your first question to your first semester.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="highlight">The Glossonauts</div>
+          <h3>Greek for real life &amp; real studies</h3>
+          <p>
+            Glossonauts specialise in teaching Greek to international students
+            – from zero to academic level. You’ll learn the language you need
+            for lectures, group work, and everyday life, using modern, engaging
+            methods.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="highlight">L.TWO</div>
+          <h3>Admissions expertise on your side</h3>
+          <p>
+            L.TWO guides you through the whole application journey: selecting
+            programs, preparing documents, meeting deadlines, and
+            communicating with universities so your file is complete and on
+            time.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="highlight">One pathway</div>
+          <h3>End-to-end support, not just advice</h3>
+          <p>
+            We don’t just send you links and wish you luck. We build a
+            personalised plan for your profile, keep you on track with
+            reminders, and support you before and after you arrive in Greece.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS + HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>What to expect – and how we help</h2>
+        <p>
+          Admission requirements and deadlines can feel overwhelming. We turn
+          them into a clear, step-by-step process you can follow with
+          confidence.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <span class="mini-title">Requirements</span>
+          <h3>Typical application essentials</h3>
+          <p>
+            While each university has its own rules, most English-taught
+            programs will ask for some combination of:
+          </p>
+          <ul style="margin-top: 0.5rem; padding-left: 1.1rem; color: var(--muted); font-size: 0.9rem; list-style: disc;">
+            <li>School or university transcripts</li>
+            <li>Proof of English (IELTS or equivalent)</li>
+            <li>CV / résumé</li>
+            <li>Motivation letter / statement of purpose</li>
+            <li>Sometimes an interview or additional tests</li>
+          </ul>
+          <p class="tagline">
+            We help you understand what each program expects – and how to
+            present your profile clearly and professionally.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="mini-title">Our role</span>
+          <h3>Language, documents, and exams</h3>
+          <p>
+            NextStop Greece supports you with:
+          </p>
+          <ul style="margin-top: 0.5rem; padding-left: 1.1rem; color: var(--muted); font-size: 0.9rem; list-style: disc;">
+            <li>
+              <strong>Program shortlist &amp; strategy</strong> tailored to your
+              goals and budget
+            </li>
+            <li>
+              <strong>IELTS preparation</strong> &amp; academic English/Greek
+              coaching
+            </li>
+            <li>
+              Guidance for <strong>entrance exams</strong> (SAT, GRE, etc.),
+              where needed
+            </li>
+            <li>
+              Detailed feedback on your
+              <strong>CV and motivation letter</strong>
+            </li>
+            <li>
+              <strong>Mock interviews</strong> and interview preparation
+            </li>
+          </ul>
+          <p class="tagline">
+            You stay in control of your applications – we make sure you’re not
+            doing it alone.
+          </p>
+        </div>
+      </div>
+
+      <section style="margin-top: 2.5rem;">
+        <div class="section-title" style="margin-bottom: 1.5rem;">
+          <h2>Your journey with NextStop Greece</h2>
+          <p>Clear steps from first call to first day on campus.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">Step 1</div>
+            <div class="step-title">Free 20-minute consultation</div>
+            <p>
+              We learn about your background, goals, timeline, and budget. You
+              leave the call with a first roadmap and clarity on your options.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2</div>
+            <div class="step-title">Personalised shortlist &amp; plan</div>
+            <p>
+              We propose specific programs (public &amp; private) and agree on
+              an application strategy, including key deadlines and tasks.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3</div>
+            <div class="step-title">Language &amp; admissions prep</div>
+            <p>
+              You start your customised Greek + exam prep path while we help
+              you shape strong application documents and prepare for exams or
+              interviews.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 4</div>
+            <div class="step-title">Applications &amp; follow-up</div>
+            <p>
+              You submit complete applications on time, with our support and
+              follow-up in communication with universities when needed.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 5</div>
+            <div class="step-title">Arrival &amp; integration</div>
+            <p>
+              Once you’re accepted, we continue your Greek lessons and offer
+              practical tips so your first months in Greece feel easier and
+              more enjoyable.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          A few of the questions students and parents ask us most often about
+          studying in Greece.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Do I need Greek to start studying?</h3>
+          <p>
+            Many Bachelor’s and Master’s programs are fully English-taught, so
+            you can begin without speaking Greek. However, learning Greek
+            gradually will make your life easier and richer. That’s why Greek
+            lessons are built into our pathway.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are Greek degrees recognised internationally?</h3>
+          <p>
+            Public universities are recognised throughout the EU, and many
+            private institutions have international partnerships and
+            accreditations. During our consultation, we’ll help you understand
+            recognition in your specific field and target countries.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I work while I study?</h3>
+          <p>
+            Many students work part-time in sectors like hospitality, tech,
+            and services, depending on visa rules and workload. We can help
+            you set realistic expectations and understand typical schedules.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How much does NextStop Greece cost?</h3>
+          <p>
+            The cost depends on the level of support you need (language,
+            admissions, exam prep, etc.). In our free consultation, we’ll
+            outline different package options clearly so you can choose what
+            fits your situation and budget.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>See which English-taught options in Greece fit you.</h2>
+        <p>
+          Book a free 20-minute consultation and receive a personalised plan
+          with suggested programs, a realistic timeline, and your next steps
+          for both language and admissions.
+        </p>
+        <a href="mailto:info@example.com?subject=NextStop%20Greece%20Consultation"
+           class="btn btn-primary"
+           style="background: #ffb703; color: #1f2933; box-shadow: 0 10px 26px rgba(0,0,0,0.25);">
+          Book your free consultation
+        </a>
+        <div class="contact-info">
+          Or contact us directly:<br />
+          Email: <strong>info@example.com</strong> · WhatsApp:
+          <strong>+30 0000 000000</strong><br />
+          In collaboration with
+          <strong>The Glossonauts</strong> &amp; <strong>L.TWO</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> NextStop Greece. All rights reserved.</span>
+        <span>
+          Glossonauts · L.TWO ·
+          <a href="#top">Back to top</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
